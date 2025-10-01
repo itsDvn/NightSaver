@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Roblox Gamepasses</title>
+  <style>
+    /* Reset */
+    body, html {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      font-family: Arial, sans-serif;
+      color: white;
+      background: black;
+    }
+
+    /* Canvas for stars */
+    #starsCanvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+
+    /* Section styles */
+    section {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 50px;
+    }
+
+    section:nth-child(even) {
+      background: rgba(255,255,255,0.05);
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    a {
+      display: inline-block;
+      background: #00ccff;
+      padding: 12px 24px;
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+
+    a:hover {
+      background: #0088aa;
+    }
+
+    /* Back to top button */
+    #backToTop {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      padding: 10px 15px;
+      background: #00ccff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      display: none;
+      z-index: 50;
+    }
+
+    /* Music toggle button */
+    #musicToggle {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 100;
+      padding: 10px;
+      background: rgba(0,0,0,0.6);
+      border: none;
+      color: white;
+      font-size: 20px;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- YouTube Background Music -->
+  <iframe 
+    id="ytbg" 
+    src="https://www.youtube.com/embed/JOXUEZloyZE?autoplay=1&loop=1&playlist=JOXUEZloyZE&controls=0&showinfo=0&mute=1" 
+    frameborder="0" 
+    style="position: fixed; top:0; left:0; width:100%; height:100%; pointer-events: none; z-index: -2;" 
+    allow="autoplay">
+  </iframe>
+
+  <!-- Music Toggle -->
+  <button id="musicToggle">🔇</button>
+
+  <!-- Stars Background -->
+  <canvas id="starsCanvas"></canvas>
+
+  <!-- Sections -->
+  <section>
+    <h1>50 Robux Gamepass</h1>
+    <a href="https://create.roblox.com/dashboard/creations/experiences/5711974404/passes/1507512299/overview" target="_blank">Buy Now</a>
+  </section>
+
+  <section>
+    <h1>100 Robux Gamepass</h1>
+    <a href="https://create.roblox.com/dashboard/creations/experiences/5711974404/passes/1505046202/overview" target="_blank">Buy Now</a>
+  </section>
+
+  <section>
+    <h1>150 Robux Gamepass</h1>
+    <a href="https://create.roblox.com/dashboard/creations/experiences/5711974404/passes/1503893962/overview" target="_blank">Buy Now</a>
+  </section>
+
+  <section>
+    <h1>200 Robux Gamepass</h1>
+    <a href="https://create.roblox.com/dashboard/creations/experiences/5711974404/passes/1508783857/overview" target="_blank">Buy Now</a>
+  </section>
+
+  <!-- Back to Top -->
+  <button id="backToTop">⬆ Top</button>
+
+  <script>
+    // ⭐ Moving Stars Background
+    const canvas = document.getElementById("starsCanvas");
+    const ctx = canvas.getContext("2d");
+    let stars = [];
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    window.addEventListener("resize", resizeCanvas);
+    resizeCanvas();
+
+    function createStars(count) {
+      stars = [];
+      for (let i = 0; i < count; i++) {
+        stars.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          size: Math.random() * 2,
+          speed: Math.random() * 0.5 + 0.2
+        });
+      }
+    }
+    createStars(200);
+
+    function animateStars() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = "white";
+      for (let s of stars) {
+        ctx.beginPath();
+        ctx.arc(s.x, s.y, s.size, 0, Math.PI * 2);
+        ctx.fill();
+        s.y += s.speed;
+        if (s.y > canvas.height) {
+          s.y = 0;
+          s.x = Math.random() * canvas.width;
+        }
+      }
+      requestAnimationFrame(animateStars);
+    }
+    animateStars();
+
+    // ⬆ Back to Top Button
+    const backToTop = document.getElementById("backToTop");
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 200) {
+        backToTop.style.display = "block";
+      } else {
+        backToTop.style.display = "none";
+      }
+    });
+    backToTop.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    // 🎵 Music Toggle
+    const iframe = document.getElementById("ytbg");
+    const btn = document.getElementById("musicToggle");
+    let muted = true;
+
+    btn.addEventListener("click", () => {
+      if (muted) {
+        iframe.src = "https://www.youtube.com/embed/JOXUEZloyZE?autoplay=1&loop=1&playlist=JOXUEZloyZE&controls=0&showinfo=0&mute=0";
+        btn.textContent = "🔊";
+      } else {
+        iframe.src = "https://www.youtube.com/embed/JOXUEZloyZE?autoplay=1&loop=1&playlist=JOXUEZloyZE&controls=0&showinfo=0&mute=1";
+        btn.textContent = "🔇";
+      }
+      muted = !muted;
+    });
+  </script>
+</body>
+</html>
