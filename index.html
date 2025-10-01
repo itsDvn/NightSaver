@@ -4,189 +4,138 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NightSaver Portfolio</title>
-  <!-- Favicon -->
+
+  <!-- Website Icon -->
   <link rel="icon" type="image/png" href="https://i.pinimg.com/736x/35/47/69/354769a6c144b2d298f2acf91849981f.jpg">
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+
   <style>
+    /* Reset & Background */
     body {
       margin: 0;
-      font-family: 'Orbitron', sans-serif;
+      font-family: Arial, sans-serif;
       background: black;
       color: white;
+      text-align: center;
       overflow-x: hidden;
-      scroll-behavior: smooth;
     }
 
+    /* Star animation */
     .stars {
       position: fixed;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
-      background: black;
+      background: url("https://www.transparenttextures.com/patterns/stardust.png");
+      animation: moveStars 60s linear infinite;
       z-index: -1;
-      overflow: hidden;
+    }
+    @keyframes moveStars {
+      from { background-position: 0 0; }
+      to { background-position: -10000px 5000px; }
     }
 
-    .star {
-      position: absolute;
-      width: 2px;
-      height: 2px;
-      background: white;
-      animation: moveStar linear infinite;
-    }
-
-    @keyframes moveStar {
-      from {
-        transform: translateY(0px);
-      }
-      to {
-        transform: translateY(100vh);
-      }
-    }
-
-    .container {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 40px;
+    /* Sections */
+    section {
+      padding: 80px 20px;
+      max-width: 900px;
+      margin: auto;
     }
 
     h1 {
-      font-size: 80px;
-      text-shadow: 0 0 20px cyan, 0 0 40px blue;
+      font-size: 3em;
       margin-bottom: 20px;
-    }
-
-    p {
-      max-width: 800px;
-      font-size: 22px;
-      line-height: 1.6;
-    }
-
-    section {
-      margin-top: 60px;
-      padding: 40px;
-      background: rgba(0,0,0,0.6);
-      border-radius: 15px;
+      color: cyan;
+      text-shadow: 0 0 10px cyan;
     }
 
     h2 {
-      font-size: 40px;
-      text-shadow: 0 0 15px violet, 0 0 25px purple;
+      font-size: 2em;
+      margin-bottom: 15px;
+      color: #00ffff;
     }
 
-    a.button {
+    p {
+      font-size: 1.2em;
+      line-height: 1.6;
+    }
+
+    /* Buttons */
+    .btn {
       display: inline-block;
-      margin-top: 15px;
-      padding: 12px 24px;
-      font-size: 20px;
-      background: cyan;
-      color: black;
+      margin: 15px;
+      padding: 15px 25px;
+      font-size: 1.1em;
+      border-radius: 12px;
       text-decoration: none;
-      border-radius: 8px;
-      transition: 0.3s;
-    }
-
-    a.button:hover {
-      background: deepskyblue;
-      color: white;
-    }
-
-    img {
-      max-width: 250px;
-      border-radius: 15px;
-      box-shadow: 0 0 15px white;
-      margin-bottom: 20px;
-    }
-
-    .buttons {
-      margin-top: 20px;
-    }
-
-    .buttons button {
-      display: block;
-      margin: 10px auto;
-      padding: 15px 30px;
-      font-size: 18px;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      background: #222;
-      color: white;
-      transition: 0.3s;
-      box-shadow: 0 0 10px cyan;
-    }
-
-    .buttons button:hover {
-      background: cyan;
       color: black;
+      background: cyan;
+      box-shadow: 0 0 15px cyan;
+      transition: 0.3s;
+    }
+    .btn:hover {
+      background: #00cccc;
+      box-shadow: 0 0 25px #00ffff;
+      transform: scale(1.1);
     }
 
-    iframe {
-      display: none;
+    /* Profile image */
+    .profile {
+      width: 300px;
+      border-radius: 20px;
+      margin: 20px auto;
+      display: block;
+      box-shadow: 0 0 20px white;
+    }
+
+    /* Outro */
+    .outro {
+      font-size: 1.4em;
+      margin-top: 20px;
+      color: #ffcc00;
+      text-shadow: 0 0 10px #ff9900;
     }
   </style>
 </head>
 <body>
-  <!-- Moving stars background -->
   <div class="stars"></div>
 
   <!-- Intro -->
-  <div class="container">
+  <section>
     <h1>NightSaver</h1>
-    <p>
-      Hi wanna try to hired me? I have 4 years of experience in scripting so I can help a lot with code.  
-      I can also animate, but I only have 1 year of experience there 😅.  
-      Wanna see more about me? Scroll dude :D
-    </p>
-  </div>
+    <p>Hi, wanna try to hire me? I have <b>4 years experience</b> in scripting so I can help a lot with code.<br>
+    I can also animate (1 year experience). Wanna see more about me?<br>
+    Scroll dude :D</p>
+  </section>
 
-  <!-- Discord Section -->
-  <div class="container">
-    <section>
-      <h2>Noyre</h2>
-      <a href="https://discord.gg/rC55DPt8Tu" target="_blank" class="button">Join My Discord Server</a>
-      <p>
-        Noyre Server is my new Discord server. You can get help, hire Roblox scripters & builders,  
-        and even check out my YouTube channel through the server. It’s a cool place to hang out :)
-      </p>
-    </section>
-  </div>
+  <!-- Discord -->
+  <section>
+    <h2>💬 Discord Server: Noyre</h2>
+    <a href="https://discord.gg/rC55DPt8Tu" target="_blank" class="btn">Join Noyre</a>
+    <p>Noyre is a new Discord server I created. In the server, you can get help, hire or get hired as a Roblox scripter or builder.  
+    I also have a YouTube channel linked inside the server — check it out! :)</p>
+  </section>
 
-  <!-- Profile Section -->
-  <div class="container">
-    <section>
-      <img src="https://i.pinimg.com/736x/b3/e7/b0/b3e7b0c5ed706b245b1353136a0d86ab.jpg" alt="Profile">
-      <p>
-        Bye bye, that’s all I wanted to say. Maybe you want to hire me?  
-        Just need to give Robux 😋 That’s all!
-      </p>
-      <div class="buttons">
-        <button onclick="window.open('https://www.roblox.com/game-pass/1507512299','_blank')">50 Robux - Simple Code</button>
-        <button onclick="window.open('https://www.roblox.com/game-pass/1505046202','_blank')">100 Robux - Script that works good</button>
-        <button onclick="window.open('https://www.roblox.com/game-pass/1503893962','_blank')">150 Robux - Script + Animator + Bug Fix</button>
-        <button onclick="window.open('https://www.roblox.com/game-pass/1508783857','_blank')">200 Robux - Full Game Support</button>
-      </div>
-    </section>
-  </div>
+  <!-- Profile -->
+  <section>
+    <h2>👤 About Me</h2>
+    <img src="https://i.pinimg.com/736x/b3/e7/b0/b3e7b0c5ed706b245b1353136a0d86ab.jpg" class="profile">
+    <p class="outro">Bye bye! That’s all I wanted to say.  
+    Maybe you want to hire me? Just pay in Robux 😋</p>
+  </section>
 
-  <!-- Backsound autoplay (muted) -->
-  <iframe width="0" height="0" src="https://www.youtube.com/embed/JOXUEZloyZE?autoplay=1&loop=1&playlist=JOXUEZloyZE&mute=1"></iframe>
+  <!-- Robux Hire Buttons -->
+  <section>
+    <h2>💰 Hire Me with Robux</h2>
+    <a href="https://www.roblox.com/game-pass/1507512299" target="_blank" class="btn">50 Robux - Help Simple Code</a>
+    <a href="https://www.roblox.com/game-pass/1505046202" target="_blank" class="btn">100 Robux - Make Script that works good</a>
+    <a href="https://www.roblox.com/game-pass/1503893962" target="_blank" class="btn">150 Robux - Make&Help Script + Animation + Bug Fix</a>
+    <a href="https://www.roblox.com/game-pass/1508783857" target="_blank" class="btn">200 Robux - Full Help until Public</a>
+  </section>
 
-  <script>
-    // Create stars
-    const starsContainer = document.querySelector('.stars');
-    for (let i = 0; i < 150; i++) {
-      let star = document.createElement('div');
-      star.classList.add('star');
-      star.style.left = Math.random() * 100 + 'vw';
-      star.style.top = Math.random() * 100 + 'vh';
-      star.style.animationDuration = (Math.random() * 5 + 5) + 's';
-      starsContainer.appendChild(star);
-    }
-  </script>
+  <!-- Background Music -->
+  <audio autoplay loop>
+    <source src="calm-music.mp3" type="audio/mpeg">
+  </audio>
 </body>
 </html>
