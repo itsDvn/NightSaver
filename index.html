@@ -3,29 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Roblox Gamepasses</title>
+  <title>NightSaver Portfolio</title>
   <style>
-    /* Reset */
     body, html {
       margin: 0;
       padding: 0;
-      overflow-x: hidden;
       font-family: Arial, sans-serif;
       color: white;
       background: black;
+      overflow-x: hidden;
     }
 
-    /* Canvas for stars */
     #starsCanvas {
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
       z-index: -1;
     }
 
-    /* Section styles */
     section {
       min-height: 100vh;
       display: flex;
@@ -36,16 +31,23 @@
       padding: 50px;
     }
 
-    section:nth-child(even) {
-      background: rgba(255,255,255,0.05);
-    }
-
     h1 {
       font-size: 3rem;
       margin-bottom: 20px;
     }
 
-    a {
+    p {
+      font-size: 1.2rem;
+      max-width: 700px;
+    }
+
+    img {
+      max-width: 300px;
+      border-radius: 15px;
+      margin: 20px 0;
+    }
+
+    a.button {
       display: inline-block;
       background: #00ccff;
       padding: 12px 24px;
@@ -53,14 +55,12 @@
       font-weight: bold;
       text-decoration: none;
       border-radius: 8px;
+      margin: 10px;
       transition: background 0.3s;
     }
 
-    a:hover {
-      background: #0088aa;
-    }
+    a.button:hover { background: #0088aa; }
 
-    /* Back to top button */
     #backToTop {
       position: fixed;
       bottom: 20px;
@@ -76,7 +76,6 @@
       z-index: 50;
     }
 
-    /* Music toggle button */
     #musicToggle {
       position: fixed;
       top: 20px;
@@ -106,35 +105,52 @@
   <!-- Music Toggle -->
   <button id="musicToggle">🔇</button>
 
-  <!-- Stars Background -->
+  <!-- Stars -->
   <canvas id="starsCanvas"></canvas>
 
-  <!-- Sections -->
+  <!-- ABOUT ME -->
   <section>
-    <h1>50 Robux Gamepass</h1>
-    <a href="https://create.roblox.com/dashboard/creations/experiences/5711974404/passes/1507512299/overview" target="_blank">Buy Now</a>
+    <h1>NightSaver</h1>
+    <p>
+      Hi wanna try to hired me? I have <b>4 year experience about scripting</b> so I can help a lot about script.  
+      And btw I can do animation too but I only have <b>1 year experience</b>.  
+      Wanna see more about me? <b>Scroll dude :D</b>
+    </p>
   </section>
 
+  <!-- DISCORD SERVER -->
   <section>
-    <h1>100 Robux Gamepass</h1>
-    <a href="https://create.roblox.com/dashboard/creations/experiences/5711974404/passes/1505046202/overview" target="_blank">Buy Now</a>
+    <h1>Noyre Discord Server</h1>
+    <a class="button" href="https://discord.gg/rC55DPt8Tu" target="_blank">Join Server</a>
+    <p>
+      Noyre is a new Discord server I made. In this server you can get help or hire Roblox scripters & builders.  
+      It’s a nice place to collab! I also have a YouTube channel you can check inside the server :)
+    </p>
   </section>
 
+  <!-- PROFILE + OUTRO -->
   <section>
-    <h1>150 Robux Gamepass</h1>
-    <a href="https://create.roblox.com/dashboard/creations/experiences/5711974404/passes/1503893962/overview" target="_blank">Buy Now</a>
+    <img src="https://i.pinimg.com/736x/b3/e7/b0/b3e7b0c5ed706b245b1353136a0d86ab.jpg" alt="Profile">
+    <p>
+      Bye bye, that’s all I wanted to say.  
+      Maybe you want to hire me? Just need to give Robux 😋
+    </p>
   </section>
 
+  <!-- ROBUX BUTTONS -->
   <section>
-    <h1>200 Robux Gamepass</h1>
-    <a href="https://create.roblox.com/dashboard/creations/experiences/5711974404/passes/1508783857/overview" target="_blank">Buy Now</a>
+    <h1>Hire Me with Robux</h1>
+    <a class="button" href="https://www.roblox.com/game-pass/1507512299" target="_blank">50 Robux – Simple code</a>
+    <a class="button" href="https://www.roblox.com/game-pass/1505046202" target="_blank">100 Robux – Script that works good</a>
+    <a class="button" href="https://www.roblox.com/game-pass/1503893962" target="_blank">150 Robux – Script + Anim + Bug Fix</a>
+    <a class="button" href="https://www.roblox.com/game-pass/1508783857" target="_blank">200 Robux – Full support until release</a>
   </section>
 
   <!-- Back to Top -->
   <button id="backToTop">⬆ Top</button>
 
   <script>
-    // ⭐ Moving Stars Background
+    // ⭐ Stars
     const canvas = document.getElementById("starsCanvas");
     const ctx = canvas.getContext("2d");
     let stars = [];
@@ -176,14 +192,10 @@
     }
     animateStars();
 
-    // ⬆ Back to Top Button
+    // ⬆ Back to Top
     const backToTop = document.getElementById("backToTop");
     window.addEventListener("scroll", () => {
-      if (window.scrollY > 200) {
-        backToTop.style.display = "block";
-      } else {
-        backToTop.style.display = "none";
-      }
+      backToTop.style.display = window.scrollY > 200 ? "block" : "none";
     });
     backToTop.addEventListener("click", () => {
       window.scrollTo({ top: 0, behavior: "smooth" });
