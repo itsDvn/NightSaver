@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>NightSaver Portfolio</title>
-
-  <!-- Website Icon -->
-  <link rel="icon" type="image/png" href="https://i.pinimg.com/736x/35/47/69/354769a6c144b2d298f2acf91849981f.jpg">
+  <!-- Favicon -->
+  <link
+    rel="icon"
+    type="image/png"
+    href="https://i.pinimg.com/736x/35/47/69/354769a6c144b2d298f2acf91849981f.jpg"
+  />
 
   <style>
-    /* Reset & Background */
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -19,7 +21,7 @@
       overflow-x: hidden;
     }
 
-    /* Star animation */
+    /* Star animation background */
     .stars {
       position: fixed;
       top: 0;
@@ -31,11 +33,14 @@
       z-index: -1;
     }
     @keyframes moveStars {
-      from { background-position: 0 0; }
-      to { background-position: -10000px 5000px; }
+      from {
+        background-position: 0 0;
+      }
+      to {
+        background-position: -10000px 5000px;
+      }
     }
 
-    /* Sections */
     section {
       padding: 80px 20px;
       max-width: 900px;
@@ -60,7 +65,7 @@
       line-height: 1.6;
     }
 
-    /* Buttons */
+    /* Styled buttons */
     .btn {
       display: inline-flex;
       align-items: center;
@@ -85,7 +90,22 @@
       transform: scale(1.1);
     }
 
-    /* Profile images */
+    .profile-small {
+      width: 120px;
+      border-radius: 50%;
+      margin-bottom: 20px;
+      box-shadow: 0 0 25px cyan, 0 0 50px cyan;
+      animation: spin 10s linear infinite;
+    }
+    @keyframes spin {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
     .profile {
       width: 300px;
       border-radius: 20px;
@@ -93,14 +113,7 @@
       display: block;
       box-shadow: 0 0 20px white;
     }
-    .profile-small {
-      width: 120px;
-      border-radius: 50%;
-      margin-bottom: 20px;
-      box-shadow: 0 0 15px cyan;
-    }
 
-    /* Outro */
     .outro {
       font-size: 1.4em;
       margin-top: 20px;
@@ -114,43 +127,89 @@
 
   <!-- Intro -->
   <section>
-    <img src="da9c45c9-c35d-480d-b8e7-ef95fcc0859f.png" alt="Profile" class="profile-small">
+    <img
+      src="https://i.pinimg.com/736x/e7/c8/9d/e7c89df9b2014778795340bfab013743.jpg"
+      alt="Profile"
+      class="profile-small"
+    />
     <h1>NightSaver</h1>
-    <p>Hi, wanna try to hire me? I have <b>4 years experience</b> in scripting so I can help a lot with code.<br>
-    I can also animate (1 year experience). Wanna see more about me?<br>
-    Scroll dude :D</p>
+    <p>
+      Hi, wanna try to hire me? I have <b>4 years experience</b> in scripting so I can help a lot with code.<br />
+      I can also animate (1 year experience). Wanna see more about me?<br />
+      Scroll dude :D
+    </p>
   </section>
 
-  <!-- Discord -->
+  <!-- Discord section -->
   <section>
     <h2>💬 Discord Server: Noyre</h2>
-    <a href="https://discord.gg/rC55DPt8Tu" target="_blank" class="btn">
-      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111370.png" alt="Discord"> Join Noyre
+    <a
+      href="https://discord.gg/rC55DPt8Tu"
+      target="_blank"
+      class="btn"
+    >
+      <img
+        src="https://cdn-icons-png.flaticon.com/512/2111/2111370.png"
+        alt="Discord"
+      />
+      Join Noyre
     </a>
-    <p>Noyre is a new Discord server I created. In the server, you can get help, hire or get hired as a Roblox scripter or builder.  
-    I also have a YouTube channel linked inside the server — check it out! :)</p>
+    <p>
+      Noyre is a new Discord server I created. In the server, you can get help, hire or get hired as a Roblox scripter or builder.<br />
+      I also have a YouTube channel linked inside the server — check it out! :)
+    </p>
   </section>
 
-  <!-- Profile -->
+  <!-- About / Profile section -->
   <section>
     <h2>👤 Outro</h2>
-    <img src="https://i.pinimg.com/736x/b3/e7/b0/b3e7b0c5ed706b245b1353136a0d86ab.jpg" class="profile">
-    <p class="outro">Bye bye! That’s all I wanted to say.  
-    Maybe you want to hire me? Just pay in Robux 😋</p>
+    <img
+      src="https://i.pinimg.com/736x/b3/e7/b0/b3e7b0c5ed706b245b1353136a0d86ab.jpg"
+      class="profile"
+      alt="Larger Profile"
+    />
+    <p class="outro">
+      Bye bye! That’s all I wanted to say.<br />
+      Maybe you want to hire me? Just pay in Robux 😋
+    </p>
   </section>
 
   <!-- Robux Hire Buttons -->
   <section>
     <h2>💰 Hire Me with Robux</h2>
-    <a href="https://www.roblox.com/game-pass/1507512299" target="_blank" class="btn">50 Robux - Help Simple Code</a>
-    <a href="https://www.roblox.com/game-pass/1505046202" target="_blank" class="btn">100 Robux - Make Script that works good</a>
-    <a href="https://www.roblox.com/game-pass/1503893962" target="_blank" class="btn">150 Robux - Help&Make Script + Animation + Bug Fix</a>
-    <a href="https://www.roblox.com/game-pass/1508783857" target="_blank" class="btn">200 Robux - Full Help until Release</a>
+    <a
+      href="https://www.roblox.com/game-pass/1507512299"
+      target="_blank"
+      class="btn"
+      >50 Robux - Help Simple Code</a
+    >
+    <a
+      href="https://www.roblox.com/game-pass/1505046202"
+      target="_blank"
+      class="btn"
+      >100 Robux - Make Script that works good</a
+    >
+    <a
+      href="https://www.roblox.com/game-pass/1503893962"
+      target="_blank"
+      class="btn"
+      >150 Robux - Help&Make Script + Animation + Bug Fix</a
+    >
+    <a
+      href="https://www.roblox.com/game-pass/1508783857"
+      target="_blank"
+      class="btn"
+      >200 Robux - Full Help until Release</a
+    >
   </section>
 
-  <!-- Background Music -->
+  <!-- Background Music (Discord-hosted) -->
   <audio autoplay loop>
-    <source src="calm-music.mp3" type="audio/mpeg">
+    <source
+      src="https://cdn.discordapp.com/attachments/1286598771995705375/1423035961763303484/calm-music.mp3"
+      type="audio/mpeg"
+    />
+    Your browser does not support the audio element.
   </audio>
 </body>
 </html>
