@@ -1,0 +1,23 @@
+.music-control {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.music-control button {
+  padding: 12px 20px;
+  font-size: 18px;
+  background: cyan;
+  color: black;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 0 10px cyan;
+  transition: 0.3s;
+}
+
+.music-control button:hover {
+  background: deepskyblue;
+  color: white;
+}
