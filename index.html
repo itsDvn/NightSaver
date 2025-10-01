@@ -141,7 +141,7 @@
     <p>💬 Chat to me and prove that you already buy and I will help what you want 😉 hehe</p>
   </div>
 
-  <!-- Music Toggle -->
+  <!-- Music Toggle Button -->
   <button id="music-control">▶️</button>
 
   <script>
@@ -151,10 +151,10 @@
     control.addEventListener('click', () => {
       if (music.paused) {
         music.play();
-        control.textContent = "⏸️";
+        control.textContent = "⏸️"; // Pause emoji
       } else {
         music.pause();
-        control.textContent = "▶️";
+        control.textContent = "▶️"; // Play emoji
       }
     });
   </script>
