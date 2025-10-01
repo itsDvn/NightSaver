@@ -33,7 +33,9 @@
 
     h1 {
       font-size: 50px;
-      margin-top: 30px;
+      margin-top: 20px;
+      color: cyan;
+      text-shadow: 0 0 10px cyan, 0 0 20px cyan;
     }
 
     .section {
@@ -41,11 +43,12 @@
     }
 
     img.profile {
-      width: 200px;
-      height: 200px;
+      width: 180px;
+      height: 180px;
       border-radius: 50%;
       border: 4px solid white;
       margin: 20px 0;
+      box-shadow: 0 0 20px cyan;
     }
 
     .discord-icon {
@@ -68,31 +71,45 @@
       margin: 10px;
       padding: 15px 30px;
       border-radius: 12px;
-      background: #444;
+      background: #222;
       color: white;
       font-size: 16px;
       cursor: pointer;
       transition: 0.3s;
+      text-decoration: none;
+      box-shadow: 0 0 10px cyan;
     }
 
     .button:hover {
-      background: #666;
+      background: cyan;
+      color: black;
     }
 
     /* Music toggle */
     #music-control {
-      margin-top: 20px;
-      padding: 10px 20px;
-      background: #222;
-      color: white;
-      border: none;
-      border-radius: 8px;
+      margin-top: 15px;
+      padding: 12px 24px;
+      background: transparent;
+      border: 2px solid cyan;
+      color: cyan;
+      font-size: 18px;
+      border-radius: 10px;
       cursor: pointer;
       transition: 0.3s;
+      box-shadow: 0 0 10px cyan, 0 0 20px cyan;
     }
 
     #music-control:hover {
-      background: #444;
+      background: cyan;
+      color: black;
+    }
+
+    /* Note under Robux buttons */
+    .note {
+      margin-top: 20px;
+      font-size: 16px;
+      color: #ccc;
+      font-style: italic;
     }
   </style>
 </head>
@@ -102,20 +119,22 @@
     <img class="profile" src="https://i.pinimg.com/736x/e7/c8/9d/e7c89df9b2014778795340bfab013743.jpg" alt="Profile">
     <h1>NightSaver</h1>
     <p>
-      Hi wanna try to hired me? I have 4 year experience about scripting so I can help a lot about script.<br>
-      BTW I can do animation too, but only 1 year experience 😅.<br>
-      Wanna see more about me? Scroll dude :D
+      Hi, wanna try to hire me? I have <b>4 years experience</b> in scripting so I can help a lot with code.<br>
+      I can also animate (1 year experience). Wanna see more about me?<br>
+      Scroll dude :D
     </p>
+
+    <!-- Music Control -->
     <button id="music-control">▶ Play Music</button>
-    <audio id="bg-music" loop>
+    <audio id="bg-music" loop muted>
       <source src="https://cdn.discordapp.com/attachments/1286598771995705375/1423035961763303484/calm-music.mp3" type="audio/mpeg">
     </audio>
   </div>
 
   <!-- Discord Section -->
   <div class="section">
-    <h2><img class="discord-icon" src="https://cdn-icons-png.flaticon.com/512/5968/5968756.png">Noyre</h2>
-    <a href="https://discord.gg/rC55DPt8Tu" target="_blank">Join Discord</a>
+    <h2><img class="discord-icon" src="https://cdn-icons-png.flaticon.com/512/5968/5968756.png"> Discord Server: Noyre</h2>
+    <a href="https://discord.gg/rC55DPt8Tu" target="_blank">Join My Discord Server</a>
     <p>
       Noyre Server is a new community where you can hire and get hired as a Roblox scripter or builder.<br>
       You can also check my YouTube channel inside the server :)
@@ -130,11 +149,12 @@
       Maybe you want to hire me? Just give me Robux 😋
     </p>
     <div>
-      <a class="button" href="https://www.roblox.com/game-pass/1507512299">50 Robux – Help Simple Code</a>
-      <a class="button" href="https://www.roblox.com/game-pass/1505046202">100 Robux – Make Good Script</a>
-      <a class="button" href="https://www.roblox.com/game-pass/1503893962">150 Robux – Help And MakeScript + Anim</a>
-      <a class="button" href="https://www.roblox.com/game-pass/1508783857">200 Robux – Full Help</a>
+      <a class="button" href="https://www.roblox.com/game-pass/1507512299" target="_blank">50 Robux – Simple Code</a>
+      <a class="button" href="https://www.roblox.com/game-pass/1505046202" target="_blank">100 Robux – Good Script</a>
+      <a class="button" href="https://www.roblox.com/game-pass/1503893962" target="_blank">150 Robux – Script + Anim</a>
+      <a class="button" href="https://www.roblox.com/game-pass/1508783857" target="_blank">200 Robux – Full Help</a>
     </div>
+    <p class="note">💬 Chat to me and prove that you already buy and I will help what you want 😉 hehe</p>
   </div>
 
   <script>
@@ -143,6 +163,7 @@
 
     control.addEventListener('click', () => {
       if (music.paused) {
+        music.muted = false; // unmute on play
         music.play();
         control.textContent = "⏸ Pause Music";
       } else {
