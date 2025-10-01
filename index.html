@@ -79,24 +79,31 @@
       background: #666;
     }
 
-    /* Music toggle */
+    /* Music Toggle */
     #music-control {
       position: fixed;
       top: 15px;
       right: 15px;
-      padding: 10px;
-      font-size: 22px;
-      background: #222;
-      color: white;
-      border: none;
-      border-radius: 50%;
+      padding: 12px 24px;
+      background: transparent;
+      border: 2px solid cyan;
+      color: cyan;
+      font-size: 18px;
+      border-radius: 10px;
       cursor: pointer;
       transition: 0.3s;
-      z-index: 999;
+      z-index: 9999;
+      box-shadow: 0 0 5px cyan;
+    }
+
+    #music-control.playing {
+      box-shadow: 0 0 10px cyan, 0 0 20px cyan, 0 0 40px cyan;
+      background: rgba(0,255,255,0.1);
     }
 
     #music-control:hover {
-      background: #444;
+      background: cyan;
+      color: black;
     }
   </style>
 </head>
@@ -110,7 +117,7 @@
       BTW I can do animation too, but only 1 year experience 😅.<br>
       Wanna see more about me? Scroll dude :D
     </p>
-    <audio id="bg-music" loop>
+    <audio id="bg-music" autoplay muted loop>
       <source src="https://cdn.discordapp.com/attachments/1286598771995705375/1423035961763303484/calm-music.mp3" type="audio/mpeg">
     </audio>
   </div>
@@ -118,7 +125,7 @@
   <!-- Discord Section -->
   <div class="section">
     <h2><img class="discord-icon" src="https://cdn-icons-png.flaticon.com/512/5968/5968756.png">Noyre</h2>
-    <a href="https://discord.gg/rC55DPt8Tu" target="_blank">Join Discord</a>
+    <a class="button" href="https://discord.gg/rC55DPt8Tu" target="_blank">✨ Join Discord ✨</a>
     <p>
       Noyre Server is a new community where you can hire and get hired as a Roblox scripter or builder.<br>
       You can also check my YouTube channel inside the server :)
@@ -150,12 +157,24 @@
 
     control.addEventListener('click', () => {
       if (music.paused) {
+        music.muted = false; // unmute when first play
         music.play();
         control.textContent = "⏸️";
+        control.classList.add("playing");
       } else {
         music.pause();
         control.textContent = "▶️";
+        control.classList.remove("playing");
       }
+    });
+
+    // Try autoplay (muted)
+    window.addEventListener('load', () => {
+      music.play().then(() => {
+        control.classList.add("playing");
+      }).catch(() => {
+        console.log("Autoplay blocked until user interacts.");
+      });
     });
   </script>
 </body>
