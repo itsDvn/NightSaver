@@ -4,8 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NightSaver Portfolio</title>
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="https://i.pinimg.com/736x/35/47/69/354769a6c144b2d298f2acf91849981f.jpg">
   <style>
-    body, html {
+    body {
       margin: 0;
       padding: 0;
       font-family: Arial, sans-serif;
@@ -14,208 +16,136 @@
       overflow-x: hidden;
     }
 
-    #starsCanvas {
+    .stars {
       position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
+      width: 100%;
+      height: 100%;
+      background: black;
       z-index: -1;
+      overflow: hidden;
     }
 
-    section {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
+    .star {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: white;
+      animation: moveStar linear infinite;
+    }
+
+    @keyframes moveStar {
+      from {
+        transform: translateY(0px);
+      }
+      to {
+        transform: translateY(100vh);
+      }
+    }
+
+    .container {
       padding: 50px;
+      text-align: center;
     }
 
     h1 {
-      font-size: 3rem;
+      font-size: 60px;
       margin-bottom: 20px;
     }
 
     p {
-      font-size: 1.2rem;
-      max-width: 700px;
+      font-size: 20px;
+      margin-bottom: 50px;
+    }
+
+    section {
+      margin: 100px 0;
+      padding: 30px;
+      background: rgba(0,0,0,0.7);
+      border-radius: 10px;
     }
 
     img {
       max-width: 300px;
       border-radius: 15px;
-      margin: 20px 0;
     }
 
-    a.button {
-      display: inline-block;
-      background: #00ccff;
-      padding: 12px 24px;
-      color: white;
-      font-weight: bold;
-      text-decoration: none;
-      border-radius: 8px;
-      margin: 10px;
-      transition: background 0.3s;
+    .buttons {
+      margin-top: 20px;
     }
 
-    a.button:hover { background: #0088aa; }
-
-    #backToTop {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      padding: 10px 15px;
-      background: #00ccff;
-      color: white;
+    .buttons button {
+      display: block;
+      margin: 10px auto;
+      padding: 15px 30px;
+      font-size: 18px;
       border: none;
-      border-radius: 8px;
+      border-radius: 10px;
       cursor: pointer;
-      font-size: 16px;
+      background: #222;
+      color: white;
+      transition: 0.3s;
+    }
+
+    .buttons button:hover {
+      background: #555;
+    }
+
+    iframe {
       display: none;
-      z-index: 50;
-    }
-
-    #musicToggle {
-      position: fixed;
-      top: 20px;
-      left: 20px;
-      z-index: 100;
-      padding: 10px;
-      background: rgba(0,0,0,0.6);
-      border: none;
-      color: white;
-      font-size: 20px;
-      cursor: pointer;
-      border-radius: 50%;
     }
   </style>
 </head>
 <body>
+  <!-- Moving stars background -->
+  <div class="stars"></div>
 
-  <!-- YouTube Background Music -->
-  <iframe 
-    id="ytbg" 
-    src="https://www.youtube.com/embed/JOXUEZloyZE?autoplay=1&loop=1&playlist=JOXUEZloyZE&controls=0&showinfo=0&mute=1" 
-    frameborder="0" 
-    style="position: fixed; top:0; left:0; width:100%; height:100%; pointer-events: none; z-index: -2;" 
-    allow="autoplay">
-  </iframe>
-
-  <!-- Music Toggle -->
-  <button id="musicToggle">🔇</button>
-
-  <!-- Stars -->
-  <canvas id="starsCanvas"></canvas>
-
-  <!-- ABOUT ME -->
-  <section>
+  <div class="container">
     <h1>NightSaver</h1>
     <p>
-      Hi wanna try to hired me? I have <b>4 year experience about scripting</b> so I can help a lot about script.  
-      And btw I can do animation too but I only have <b>1 year experience</b>.  
-      Wanna see more about me? <b>Scroll dude :D</b>
+      Hi wanna try to hired me i have 4 year experience about scripting so i can help a lot about script 
+      and btw i can do animator too and that kinda bad because i only have 1 year experience.  
+      So wanna see more about me? Scroll dude :D
     </p>
-  </section>
 
-  <!-- DISCORD SERVER -->
-  <section>
-    <h1>Noyre Discord Server</h1>
-    <a class="button" href="https://discord.gg/rC55DPt8Tu" target="_blank">Join Server</a>
-    <p>
-      Noyre is a new Discord server I made. In this server you can get help or hire Roblox scripters & builders.  
-      It’s a nice place to collab! I also have a YouTube channel you can check inside the server :)
-    </p>
-  </section>
+    <!-- Discord Section -->
+    <section id="discord">
+      <h2>Noyre</h2>
+      <a href="https://discord.gg/rC55DPt8Tu" target="_blank">Join My Discord Server</a>
+      <p>
+        Noyre Server that i make is a new discord server. In the server you can try to get help or hire Roblox scripters 
+        and builders. It’s a nice server and i also have YouTube channel if you want to see — check on the server :)
+      </p>
+    </section>
 
-  <!-- PROFILE + OUTRO -->
-  <section>
-    <img src="https://i.pinimg.com/736x/b3/e7/b0/b3e7b0c5ed706b245b1353136a0d86ab.jpg" alt="Profile">
-    <p>
-      Bye bye, that’s all I wanted to say.  
-      Maybe you want to hire me? Just need to give Robux 😋
-    </p>
-  </section>
+    <!-- Profile Section -->
+    <section id="profile">
+      <img src="https://i.pinimg.com/736x/b3/e7/b0/b3e7b0c5ed706b245b1353136a0d86ab.jpg" alt="Profile">
+      <p>
+        Bye bye that all that i want to said maybe u want to hire me just need to give robux 😋 that all
+      </p>
+      <div class="buttons">
+        <button onclick="window.open('https://www.roblox.com/game-pass/1507512299','_blank')">50 Robux - Simple Code</button>
+        <button onclick="window.open('https://www.roblox.com/game-pass/1505046202','_blank')">100 Robux - Script that works good</button>
+        <button onclick="window.open('https://www.roblox.com/game-pass/1503893962','_blank')">150 Robux - Script + Animator + Bug Fix</button>
+        <button onclick="window.open('https://www.roblox.com/game-pass/1508783857','_blank')">200 Robux - Full Game Support</button>
+      </div>
+    </section>
+  </div>
 
-  <!-- ROBUX BUTTONS -->
-  <section>
-    <h1>Hire Me with Robux</h1>
-    <a class="button" href="https://www.roblox.com/game-pass/1507512299" target="_blank">50 Robux – Simple code</a>
-    <a class="button" href="https://www.roblox.com/game-pass/1505046202" target="_blank">100 Robux – Script that works good</a>
-    <a class="button" href="https://www.roblox.com/game-pass/1503893962" target="_blank">150 Robux – Script + Anim + Bug Fix</a>
-    <a class="button" href="https://www.roblox.com/game-pass/1508783857" target="_blank">200 Robux – Full support until release</a>
-  </section>
-
-  <!-- Back to Top -->
-  <button id="backToTop">⬆ Top</button>
+  <!-- Backsound autoplay -->
+  <iframe width="0" height="0" src="https://www.youtube.com/embed/JOXUEZloyZE?autoplay=1&loop=1&playlist=JOXUEZloyZE"></iframe>
 
   <script>
-    // ⭐ Stars
-    const canvas = document.getElementById("starsCanvas");
-    const ctx = canvas.getContext("2d");
-    let stars = [];
-
-    function resizeCanvas() {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+    // Create stars
+    const starsContainer = document.querySelector('.stars');
+    for (let i = 0; i < 100; i++) {
+      let star = document.createElement('div');
+      star.classList.add('star');
+      star.style.left = Math.random() * 100 + 'vw';
+      star.style.top = Math.random() * 100 + 'vh';
+      star.style.animationDuration = (Math.random() * 5 + 5) + 's';
+      starsContainer.appendChild(star);
     }
-    window.addEventListener("resize", resizeCanvas);
-    resizeCanvas();
-
-    function createStars(count) {
-      stars = [];
-      for (let i = 0; i < count; i++) {
-        stars.push({
-          x: Math.random() * canvas.width,
-          y: Math.random() * canvas.height,
-          size: Math.random() * 2,
-          speed: Math.random() * 0.5 + 0.2
-        });
-      }
-    }
-    createStars(200);
-
-    function animateStars() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.fillStyle = "white";
-      for (let s of stars) {
-        ctx.beginPath();
-        ctx.arc(s.x, s.y, s.size, 0, Math.PI * 2);
-        ctx.fill();
-        s.y += s.speed;
-        if (s.y > canvas.height) {
-          s.y = 0;
-          s.x = Math.random() * canvas.width;
-        }
-      }
-      requestAnimationFrame(animateStars);
-    }
-    animateStars();
-
-    // ⬆ Back to Top
-    const backToTop = document.getElementById("backToTop");
-    window.addEventListener("scroll", () => {
-      backToTop.style.display = window.scrollY > 200 ? "block" : "none";
-    });
-    backToTop.addEventListener("click", () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
-
-    // 🎵 Music Toggle
-    const iframe = document.getElementById("ytbg");
-    const btn = document.getElementById("musicToggle");
-    let muted = true;
-
-    btn.addEventListener("click", () => {
-      if (muted) {
-        iframe.src = "https://www.youtube.com/embed/JOXUEZloyZE?autoplay=1&loop=1&playlist=JOXUEZloyZE&controls=0&showinfo=0&mute=0";
-        btn.textContent = "🔊";
-      } else {
-        iframe.src = "https://www.youtube.com/embed/JOXUEZloyZE?autoplay=1&loop=1&playlist=JOXUEZloyZE&controls=0&showinfo=0&mute=1";
-        btn.textContent = "🔇";
-      }
-      muted = !muted;
-    });
   </script>
 </body>
 </html>
