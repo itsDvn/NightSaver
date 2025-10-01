@@ -162,7 +162,7 @@
 
   <!-- About / Profile section -->
   <section>
-    <h2>👤 Outro</h2>
+    <h2>👤 About Me</h2>
     <img
       src="https://i.pinimg.com/736x/b3/e7/b0/b3e7b0c5ed706b245b1353136a0d86ab.jpg"
       class="profile"
@@ -181,19 +181,19 @@
       href="https://www.roblox.com/game-pass/1507512299"
       target="_blank"
       class="btn"
-      >50 Robux - Help Simple Code</a
+      >50 Robux - Simple Code</a
     >
     <a
       href="https://www.roblox.com/game-pass/1505046202"
       target="_blank"
       class="btn"
-      >100 Robux - Make Script that works good</a
+      >100 Robux - Script that works good</a
     >
     <a
       href="https://www.roblox.com/game-pass/1503893962"
       target="_blank"
       class="btn"
-      >150 Robux - Help&Make Script + Animation + Bug Fix</a
+      >150 Robux - Script + Animation + Bug Fix</a
     >
     <a
       href="https://www.roblox.com/game-pass/1508783857"
@@ -203,13 +203,22 @@
     >
   </section>
 
-  <!-- Background Music (Discord-hosted) -->
-  <audio autoplay loop>
+  <!-- Background Music -->
+  <audio id="bg-music" autoplay loop muted>
     <source
       src="https://cdn.discordapp.com/attachments/1286598771995705375/1423035961763303484/calm-music.mp3"
       type="audio/mpeg"
     />
     Your browser does not support the audio element.
   </audio>
+
+  <script>
+    // Unmute music when user interacts with the page
+    window.addEventListener("click", () => {
+      const audio = document.getElementById("bg-music");
+      audio.muted = false;
+      audio.play();
+    });
+  </script>
 </body>
 </html>
