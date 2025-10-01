@@ -62,7 +62,9 @@
 
     /* Buttons */
     .btn {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
       margin: 15px;
       padding: 15px 25px;
       font-size: 1.1em;
@@ -73,19 +75,29 @@
       box-shadow: 0 0 15px cyan;
       transition: 0.3s;
     }
+    .btn img {
+      width: 22px;
+      height: 22px;
+    }
     .btn:hover {
       background: #00cccc;
       box-shadow: 0 0 25px #00ffff;
       transform: scale(1.1);
     }
 
-    /* Profile image */
+    /* Profile images */
     .profile {
       width: 300px;
       border-radius: 20px;
       margin: 20px auto;
       display: block;
       box-shadow: 0 0 20px white;
+    }
+    .profile-small {
+      width: 120px;
+      border-radius: 50%;
+      margin-bottom: 20px;
+      box-shadow: 0 0 15px cyan;
     }
 
     /* Outro */
@@ -102,6 +114,7 @@
 
   <!-- Intro -->
   <section>
+    <img src="da9c45c9-c35d-480d-b8e7-ef95fcc0859f.png" alt="Profile" class="profile-small">
     <h1>NightSaver</h1>
     <p>Hi, wanna try to hire me? I have <b>4 years experience</b> in scripting so I can help a lot with code.<br>
     I can also animate (1 year experience). Wanna see more about me?<br>
@@ -111,14 +124,16 @@
   <!-- Discord -->
   <section>
     <h2>💬 Discord Server: Noyre</h2>
-    <a href="https://discord.gg/rC55DPt8Tu" target="_blank" class="btn">Join Noyre</a>
+    <a href="https://discord.gg/rC55DPt8Tu" target="_blank" class="btn">
+      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111370.png" alt="Discord"> Join Noyre
+    </a>
     <p>Noyre is a new Discord server I created. In the server, you can get help, hire or get hired as a Roblox scripter or builder.  
     I also have a YouTube channel linked inside the server — check it out! :)</p>
   </section>
 
   <!-- Profile -->
   <section>
-    <h2>👤 About Me</h2>
+    <h2>👤 Outro</h2>
     <img src="https://i.pinimg.com/736x/b3/e7/b0/b3e7b0c5ed706b245b1353136a0d86ab.jpg" class="profile">
     <p class="outro">Bye bye! That’s all I wanted to say.  
     Maybe you want to hire me? Just pay in Robux 😋</p>
@@ -129,8 +144,8 @@
     <h2>💰 Hire Me with Robux</h2>
     <a href="https://www.roblox.com/game-pass/1507512299" target="_blank" class="btn">50 Robux - Help Simple Code</a>
     <a href="https://www.roblox.com/game-pass/1505046202" target="_blank" class="btn">100 Robux - Make Script that works good</a>
-    <a href="https://www.roblox.com/game-pass/1503893962" target="_blank" class="btn">150 Robux - Make&Help Script + Animation + Bug Fix</a>
-    <a href="https://www.roblox.com/game-pass/1508783857" target="_blank" class="btn">200 Robux - Full Help until Public</a>
+    <a href="https://www.roblox.com/game-pass/1503893962" target="_blank" class="btn">150 Robux - Help&Make Script + Animation + Bug Fix</a>
+    <a href="https://www.roblox.com/game-pass/1508783857" target="_blank" class="btn">200 Robux - Full Help until Release</a>
   </section>
 
   <!-- Background Music -->
