@@ -6,14 +6,16 @@
   <title>NightSaver Portfolio</title>
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="https://i.pinimg.com/736x/35/47/69/354769a6c144b2d298f2acf91849981f.jpg">
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-      color: white;
+      font-family: 'Orbitron', sans-serif;
       background: black;
+      color: white;
       overflow-x: hidden;
+      scroll-behavior: smooth;
     }
 
     .stars {
@@ -43,30 +45,61 @@
     }
 
     .container {
-      padding: 50px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       text-align: center;
+      padding: 40px;
     }
 
     h1 {
-      font-size: 60px;
+      font-size: 80px;
+      text-shadow: 0 0 20px cyan, 0 0 40px blue;
       margin-bottom: 20px;
     }
 
     p {
-      font-size: 20px;
-      margin-bottom: 50px;
+      max-width: 800px;
+      font-size: 22px;
+      line-height: 1.6;
     }
 
     section {
-      margin: 100px 0;
-      padding: 30px;
-      background: rgba(0,0,0,0.7);
-      border-radius: 10px;
+      margin-top: 60px;
+      padding: 40px;
+      background: rgba(0,0,0,0.6);
+      border-radius: 15px;
+    }
+
+    h2 {
+      font-size: 40px;
+      text-shadow: 0 0 15px violet, 0 0 25px purple;
+    }
+
+    a.button {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 12px 24px;
+      font-size: 20px;
+      background: cyan;
+      color: black;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+
+    a.button:hover {
+      background: deepskyblue;
+      color: white;
     }
 
     img {
-      max-width: 300px;
+      max-width: 250px;
       border-radius: 15px;
+      box-shadow: 0 0 15px white;
+      margin-bottom: 20px;
     }
 
     .buttons {
@@ -84,10 +117,12 @@
       background: #222;
       color: white;
       transition: 0.3s;
+      box-shadow: 0 0 10px cyan;
     }
 
     .buttons button:hover {
-      background: #555;
+      background: cyan;
+      color: black;
     }
 
     iframe {
@@ -99,29 +134,35 @@
   <!-- Moving stars background -->
   <div class="stars"></div>
 
+  <!-- Intro -->
   <div class="container">
     <h1>NightSaver</h1>
     <p>
-      Hi wanna try to hired me i have 4 year experience about scripting so i can help a lot about script 
-      and btw i can do animator too and that kinda bad because i only have 1 year experience.  
-      So wanna see more about me? Scroll dude :D
+      Hi wanna try to hired me? I have 4 years of experience in scripting so I can help a lot with code.  
+      I can also animate, but I only have 1 year of experience there 😅.  
+      Wanna see more about me? Scroll dude :D
     </p>
+  </div>
 
-    <!-- Discord Section -->
-    <section id="discord">
+  <!-- Discord Section -->
+  <div class="container">
+    <section>
       <h2>Noyre</h2>
-      <a href="https://discord.gg/rC55DPt8Tu" target="_blank">Join My Discord Server</a>
+      <a href="https://discord.gg/rC55DPt8Tu" target="_blank" class="button">Join My Discord Server</a>
       <p>
-        Noyre Server that i make is a new discord server. In the server you can try to get help or hire Roblox scripters 
-        and builders. It’s a nice server and i also have YouTube channel if you want to see — check on the server :)
+        Noyre Server is my new Discord server. You can get help, hire Roblox scripters & builders,  
+        and even check out my YouTube channel through the server. It’s a cool place to hang out :)
       </p>
     </section>
+  </div>
 
-    <!-- Profile Section -->
-    <section id="profile">
+  <!-- Profile Section -->
+  <div class="container">
+    <section>
       <img src="https://i.pinimg.com/736x/b3/e7/b0/b3e7b0c5ed706b245b1353136a0d86ab.jpg" alt="Profile">
       <p>
-        Bye bye that all that i want to said maybe u want to hire me just need to give robux 😋 that all
+        Bye bye, that’s all I wanted to say. Maybe you want to hire me?  
+        Just need to give Robux 😋 That’s all!
       </p>
       <div class="buttons">
         <button onclick="window.open('https://www.roblox.com/game-pass/1507512299','_blank')">50 Robux - Simple Code</button>
@@ -132,13 +173,13 @@
     </section>
   </div>
 
-  <!-- Backsound autoplay -->
-  <iframe width="0" height="0" src="https://www.youtube.com/embed/JOXUEZloyZE?autoplay=1&loop=1&playlist=JOXUEZloyZE"></iframe>
+  <!-- Backsound autoplay (muted) -->
+  <iframe width="0" height="0" src="https://www.youtube.com/embed/JOXUEZloyZE?autoplay=1&loop=1&playlist=JOXUEZloyZE&mute=1"></iframe>
 
   <script>
     // Create stars
     const starsContainer = document.querySelector('.stars');
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i < 150; i++) {
       let star = document.createElement('div');
       star.classList.add('star');
       star.style.left = Math.random() * 100 + 'vw';
