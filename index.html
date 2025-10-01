@@ -84,20 +84,19 @@
       position: fixed;
       top: 15px;
       right: 15px;
-      padding: 12px;
+      padding: 10px;
       font-size: 22px;
-      background: #111;
+      background: #222;
       color: white;
       border: none;
       border-radius: 50%;
       cursor: pointer;
       transition: 0.3s;
-      z-index: 9999;
-      box-shadow: 0 0 12px cyan;
+      z-index: 999;
     }
 
     #music-control:hover {
-      background: #333;
+      background: #444;
     }
   </style>
 </head>
@@ -112,7 +111,6 @@
       Wanna see more about me? Scroll dude :D
     </p>
     <audio id="bg-music" loop>
-      <!-- Replace with your own MP3 link -->
       <source src="https://cdn.discordapp.com/attachments/1286598771995705375/1423035961763303484/calm-music.mp3" type="audio/mpeg">
     </audio>
   </div>
@@ -143,7 +141,7 @@
     <p>💬 Chat to me and prove that you already buy and I will help what you want 😉 hehe</p>
   </div>
 
-  <!-- Music Toggle Button -->
+  <!-- Music Toggle -->
   <button id="music-control">▶️</button>
 
   <script>
@@ -153,10 +151,10 @@
     control.addEventListener('click', () => {
       if (music.paused) {
         music.play();
-        control.textContent = "⏸️"; // Pause emoji
+        control.textContent = "⏸️";
       } else {
         music.pause();
-        control.textContent = "▶️"; // Play emoji
+        control.textContent = "▶️";
       }
     });
   </script>
