@@ -7,173 +7,187 @@
   <style>
     body {
       margin: 0;
-      padding: 0;
       font-family: Arial, sans-serif;
+      background: #0d0d0d;
       color: white;
-      background: black;
       text-align: center;
-      overflow-x: hidden;
     }
 
-    /* Background with moving stars */
-    body::before {
-      content: "";
-      position: fixed;
-      width: 200%;
-      height: 200%;
-      background: url('https://www.transparenttextures.com/patterns/stardust.png');
-      animation: moveStars 60s linear infinite;
-      z-index: -1;
+    header {
+      position: relative;
+      width: 100%;
+      height: 300px;
+      overflow: hidden;
     }
 
-    @keyframes moveStars {
-      from { transform: translate(0, 0); }
-      to { transform: translate(-500px, -500px); }
+    header img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .profile {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 4px solid white;
+      position: relative;
+      margin-top: -75px;
+      z-index: 10;
     }
 
     h1 {
-      font-size: 50px;
-      margin-top: 30px;
+      font-size: 3rem;
+      margin: 10px 0;
     }
 
-    .section {
-      margin: 80px 20px;
+    p {
+      max-width: 700px;
+      margin: 0 auto 40px;
+      font-size: 1.1rem;
+      line-height: 1.6;
     }
 
-    img.profile {
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      border: 4px solid white;
-      margin: 20px 0;
+    section {
+      padding: 60px 20px;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 1s ease;
     }
 
-    .discord-icon {
-      width: 40px;
-      vertical-align: middle;
-      margin-right: 10px;
+    section.show {
+      opacity: 1;
+      transform: translateY(0);
     }
 
-    a {
-      color: cyan;
-      text-decoration: none;
+    .discord-box, .outro-box {
+      background: #1e1e1e;
+      border-radius: 15px;
+      padding: 30px;
+      margin: 20px auto;
+      max-width: 700px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
     }
 
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .button {
+    .discord-box a {
       display: inline-block;
-      margin: 10px;
-      padding: 15px 30px;
-      border-radius: 12px;
-      background: #444;
+      margin: 10px 0;
+      padding: 10px 20px;
+      background: #5865F2;
       color: white;
-      font-size: 16px;
-      cursor: pointer;
+      text-decoration: none;
+      border-radius: 8px;
       transition: 0.3s;
     }
 
-    .button:hover {
-      background: #666;
+    .discord-box a:hover {
+      background: #404EED;
     }
 
-    /* Music Toggle */
-    #music-control {
-      position: fixed;
-      top: 15px;
-      right: 15px;
-      padding: 12px 24px;
-      background: transparent;
-      border: 2px solid cyan;
-      color: cyan;
-      font-size: 18px;
+    .outro-profile {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 3px solid white;
+      margin-bottom: 20px;
+    }
+
+    .pricing {
+      display: grid;
+      gap: 15px;
+      max-width: 700px;
+      margin: 40px auto;
+    }
+
+    .pricing a {
+      display: block;
+      padding: 15px;
+      font-size: 1.1rem;
       border-radius: 10px;
-      cursor: pointer;
+      text-decoration: none;
+      background: #2d2d2d;
+      color: white;
       transition: 0.3s;
-      z-index: 9999;
-      box-shadow: 0 0 5px cyan;
     }
 
-    #music-control.playing {
-      box-shadow: 0 0 10px cyan, 0 0 20px cyan, 0 0 40px cyan;
-      background: rgba(0,255,255,0.1);
+    .pricing a:hover {
+      background: #444;
     }
 
-    #music-control:hover {
-      background: cyan;
-      color: black;
+    .note {
+      margin: 20px auto;
+      font-size: 1rem;
+      color: #bbb;
+    }
+
+    .bignote {
+      font-size: 1.3rem;
+      font-weight: bold;
+      margin-top: 20px;
+      color: #ff4444;
     }
   </style>
 </head>
 <body>
-  <!-- Intro Section -->
-  <div class="section">
-    <img class="profile" src="https://i.pinimg.com/736x/e7/c8/9d/e7c89df9b2014778795340bfab013743.jpg" alt="Profile">
-    <h1>NightSaver</h1>
-    <p>
-      Hi wanna try to hired me? I have 4 year experience about scripting so I can help a lot about script.<br>
-      BTW I can do animation too, but only 1 year experience 😅.<br>
-      Wanna see more about me? Scroll dude :D
-    </p>
-    <audio id="bg-music" autoplay muted loop>
-      <source src="https://cdn.discordapp.com/attachments/1286598771995705375/1423035961763303484/calm-music.mp3" type="audio/mpeg">
-    </audio>
-  </div>
+
+  <!-- Banner -->
+  <header>
+    <img src="https://i.pinimg.com/originals/37/35/39/3735390dfce8daaec99d6265790c99f0.gif" alt="Banner">
+  </header>
+
+  <!-- Profile & Intro -->
+  <img src="https://i.pinimg.com/736x/63/94/45/63944591258fd225b16dca49f3bc04db.jpg" alt="Profile" class="profile">
+  <h1>NightSaver</h1>
+  <p>
+    Hi wanna try to hired me? I have 4 year experience about scripting so i can help a lot about script.<br>
+    And btw I can do animator too (but kinda bad since I only have 1 year experience).<br>
+    Wanna see more about me? Scroll dude :D
+  </p>
 
   <!-- Discord Section -->
-  <div class="section">
-    <h2><img class="discord-icon" src="https://cdn-icons-png.flaticon.com/512/5968/5968756.png">Noyre</h2>
-    <a class="button" href="https://discord.gg/rC55DPt8Tu" target="_blank">✨ Join Discord ✨</a>
+  <section id="discord" class="discord-box">
+    <h2>Discord Server: Noyre</h2>
+    <a href="https://discord.gg/rC55DPt8Tu" target="_blank">Join Noyre</a>
     <p>
-      Noyre Server is a new community where you can hire and get hired as a Roblox scripter or builder.<br>
-      You can also check my YouTube channel inside the server :)
+      Noyre Server that I make is a new discord server.<br>
+      In the server you can try to get help or hiring and hired a Roblox scripter and builder.<br>
+      It's a nice server and I also have a YouTube channel, check on the server :)
     </p>
-  </div>
+  </section>
 
   <!-- Outro Section -->
-  <div class="section">
-    <img class="profile" src="https://i.pinimg.com/736x/b3/e7/b0/b3e7b0c5ed706b245b1353136a0d86ab.jpg" alt="Outro Profile">
+  <section id="outro" class="outro-box">
+    <img src="https://i.pinimg.com/736x/b3/e7/b0/b3e7b0c5ed706b245b1353136a0d86ab.jpg" alt="Outro Profile" class="outro-profile">
+    <h2>Outro</h2>
     <p>
-      Bye bye! That’s all I want to say.<br>
-      Maybe you want to hire me? Just give me Robux 😋
+      Bye bye, that's all that I want to say.<br>
+      Maybe you want to hire me? Just need to give robux 😋<br>
+      That’s all.
     </p>
-    <div>
-      <a class="button" href="https://www.roblox.com/game-pass/1507512299">50 Robux – Simple Code</a>
-      <a class="button" href="https://www.roblox.com/game-pass/1505046202">100 Robux – Good Script</a>
-      <a class="button" href="https://www.roblox.com/game-pass/1503893962">150 Robux – Script + Anim</a>
-      <a class="button" href="https://www.roblox.com/game-pass/1508783857">200 Robux – Full Help</a>
-    </div>
-    <p>💬 Chat to me and prove that you already buy and I will help what you want 😉 hehe</p>
-  </div>
 
-  <!-- Music Toggle -->
-  <button id="music-control">▶️</button>
+    <!-- Pricing -->
+    <div class="pricing">
+      <a href="https://www.roblox.com/game-pass/1507512299" target="_blank">💰 50 Robux - To make or solve a simple code</a>
+      <a href="https://www.roblox.com/game-pass/1505046202" target="_blank">💰 100 Robux - Make a script that works good</a>
+      <a href="https://www.roblox.com/game-pass/1503893962" target="_blank">💰 150 Robux - Make a code and animation, and help if the game has a bug</a>
+      <a href="https://www.roblox.com/game-pass/1508783857" target="_blank">💰 200 Robux - Help until the game success to public and don't need to say my name in the game</a>
+    </div>
+
+    <div class="note">💡 Chat me and prove by screenshot the payment then I will help to create what you want</div>
+    <div class="bignote">User: Play1_1mate</div>
+  </section>
 
   <script>
-    const music = document.getElementById('bg-music');
-    const control = document.getElementById('music-control');
+    // Scroll animation
+    const sections = document.querySelectorAll("section");
 
-    control.addEventListener('click', () => {
-      if (music.paused) {
-        music.muted = false; // unmute when first play
-        music.play();
-        control.textContent = "⏸️";
-        control.classList.add("playing");
-      } else {
-        music.pause();
-        control.textContent = "▶️";
-        control.classList.remove("playing");
-      }
-    });
-
-    // Try autoplay (muted)
-    window.addEventListener('load', () => {
-      music.play().then(() => {
-        control.classList.add("playing");
-      }).catch(() => {
-        console.log("Autoplay blocked until user interacts.");
+    window.addEventListener("scroll", () => {
+      const triggerBottom = window.innerHeight * 0.8;
+      sections.forEach(sec => {
+        const secTop = sec.getBoundingClientRect().top;
+        if (secTop < triggerBottom) {
+          sec.classList.add("show");
+        }
       });
     });
   </script>
