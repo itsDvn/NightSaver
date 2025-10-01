@@ -84,19 +84,20 @@
       position: fixed;
       top: 15px;
       right: 15px;
-      padding: 10px;
+      padding: 12px;
       font-size: 22px;
-      background: #222;
+      background: #111;
       color: white;
       border: none;
       border-radius: 50%;
       cursor: pointer;
       transition: 0.3s;
-      z-index: 999;
+      z-index: 9999;
+      box-shadow: 0 0 12px cyan;
     }
 
     #music-control:hover {
-      background: #444;
+      background: #333;
     }
   </style>
 </head>
@@ -111,6 +112,7 @@
       Wanna see more about me? Scroll dude :D
     </p>
     <audio id="bg-music" loop>
+      <!-- Replace with your own MP3 link -->
       <source src="https://cdn.discordapp.com/attachments/1286598771995705375/1423035961763303484/calm-music.mp3" type="audio/mpeg">
     </audio>
   </div>
